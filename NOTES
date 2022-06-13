@@ -9,6 +9,10 @@
 
 - "store" (Folder created)
   => "index.js" (file inside folder)
+  => Using "configureStore"
+
+-------------------------------------------------------- import { configureStore } from "@reduxjs/toolkit";
+Replace "createStore"(deprecated) with "configureStore"
 
 - "index.js"
   => Importing "store" data (Highest level of the application)
@@ -17,3 +21,25 @@
 -------------------------------------------------------- import {Provider} from 'react-redux'
 (Providing the Store)
 <Provider store={store}> <App /> </Provider>
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 3 Using Redux data in other components
+
+- "Counter.js"
+  => useSelector => to get "store" data
+
+-------------------------------------------------------- import { useSelector } from "react-redux"
+redux method to get "store" data
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 4 Dispatching actions from another component
+
+- "Counter.js"
+  => using "useDispatch"
+
+-------------------------------------------------------- import { useDispatch } from "react-redux"
+const dispatch = useDispatch()
+=> Call dispatch inside another function
+=> dispatch({ type: })

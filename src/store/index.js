@@ -1,4 +1,4 @@
-import redux from "redux";
+import { configureStore } from "@reduxjs/toolkit"; // replacing "createStore"
 
 const counterReducer = (state = { counter: 0 }, action) => {
   if (action.type === "increment") {
@@ -12,16 +12,16 @@ const counterReducer = (state = { counter: 0 }, action) => {
   return state;
 };
 
-const store = redux.configureStore(counterReducer);
+const store = configureStore({ reducer: counterReducer }); // replacing "createStore" deprecated
 
-const counterHandler = () => {
-  const counterStatus = store.getState();
-  console.log(counterStatus);
-};
+// const counterHandler = () => {
+//   const counterStatus = store.getState();
+//   console.log(counterStatus);
+// };
 
-store.subscribe(counterHandler);
+// store.subscribe(counterHandler);
 
-store.dispatch({ type: "increase" });
-store.dispatch({ type: "decrease" });
+// store.dispatch({ type: "increase" });
+// store.dispatch({ type: "decrease" });
 
 export default store;
