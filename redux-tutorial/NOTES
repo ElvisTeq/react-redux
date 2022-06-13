@@ -1,0 +1,18 @@
+## 1 Installing Redux
+
+- "redux-demo.js"
+  => Using redux
+
+- npm i redux
+
+------------------------------------------ const anyName = redux.createStore()
+Starting redux receives a (function)
+(function) => has 2 arguments (state, action) => returns new changes
+(state) => prev.data
+(action) => {type given in ".dispatch"}
+
+------------------------------------------ anyName.subcribe(FUNCTION)
+subscribing redux object to a function
+
+------------------------------------------ anyName.dispatch()
+running "anyName" subscribed functions
