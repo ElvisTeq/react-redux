@@ -43,3 +43,21 @@ redux method to get "store" data
 const dispatch = useDispatch()
 => Call dispatch inside another function
 => dispatch({ type: })
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 5 Redux with Class-Based Components
+
+- "Counter.js"
+  => Created a class Component
+  => Using "connect()"
+
+-------------------------------------------------------- import {Component} from 'react'
+to crease class-based component
+
+-------------------------------------------------------- import { connect } from "react-redux"
+to use redux in class-based components
+
+**\*\*\*** REMEMBER **\*\*\***
+In class-components functions/methods
+=> in the JSX, use ".bind(this)" to the functions
