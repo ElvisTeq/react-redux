@@ -73,3 +73,18 @@ In class-components functions/methods
 
 **\*** Important **\***
 All data inside "dispatch({data})" is accessible as "action.data" in the "redux" component
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 7 Working with useState(true/false) in Redux
+
+- "Counter.js"
+  => created a "dispatch()" to toggle "true/false"
+
+- "index.js"
+  => added into the initialState (default value) "showCounter: true/false"
+  => added action.type for the toggle "dispatch"
+
+**\*** Important **\***
+All initialState data should be return when "action.type" is handled
+=> Because it returns a new one
