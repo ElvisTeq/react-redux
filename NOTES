@@ -61,3 +61,15 @@ to use redux in class-based components
 **\*\*\*** REMEMBER **\*\*\***
 In class-components functions/methods
 => in the JSX, use ".bind(this)" to the functions
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 6 Attaching Payloads to Actions
+
+=> Dynamically changing dispatch values
+
+- "Counter.js"
+  => Adding second value to "dispatch()"
+
+**\*** Important **\***
+All data inside "dispatch({data})" is accessible as "action.data" in the "redux" component
