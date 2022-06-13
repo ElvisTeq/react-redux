@@ -2,3 +2,18 @@
 
 - npm i redux
 - npm i redux react-redux
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 2 Creating/Providing Redux Store for React
+
+- "store" (Folder created)
+  => "index.js" (file inside folder)
+
+- "index.js"
+  => Importing "store" data (Highest level of the application)
+
+-------------------------------------------------------- import store from './storeLocation'
+-------------------------------------------------------- import {Provider} from 'react-redux'
+(Providing the Store)
+<Provider store={store}> <App /> </Provider>
