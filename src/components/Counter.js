@@ -4,8 +4,9 @@ import { counterActions } from "../store/index"; // reducers functionality from 
 
 const Counter = () => {
   const dispatch = useDispatch(); // Dispatching "store"
-  const counter = useSelector((state) => state.counter); // Get "store" data
-  const show = useSelector((state) => state.showCounter); // true/false
+
+  const counter = useSelector((state) => state.counter.counter); // Get "store" data
+  const show = useSelector((state) => state.counter.showCounter); // true/false
 
   //  Dynamically changing dispatch values
   const incrementHandler = () => {

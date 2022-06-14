@@ -137,3 +137,17 @@ exporting "createSlice.reducers"
 
 ------------------------------------------------------- import { anyName } from "fileLocation"
 anyName.aFunctionFromcreateSlice => to access "createSlice.reducers"
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 12 Working with multiple slices
+
+- "index.js"
+  => Create new "createSlice()" for authentication functionality
+  => Added new "slice" to "configureStore({reducer})"
+
+- "Header.js"
+  => Implemented/added new auth Slice
+
+- "Auth.js"
+  => Implemented/added new auth Slice
