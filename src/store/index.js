@@ -1,57 +1,18 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit"; // replacing "createStore"
+import { configureStore } from "@reduxjs/toolkit"; // replacing "createStore"
 
-const initialCounterState = { counter: 0, showCounter: true };
-
-// createSlice => replacing "counterReducer()" "action.type" handling
-const counterSlice = createSlice({
-  name: "counter",
-  initialState: initialCounterState, // initial data
-  // "action.type" functionality
-  reducers: {
-    increment(state) {
-      state.counter++;
-    },
-    decrement(state) {
-      state.counter--;
-    },
-    increase(state, action) {
-      state.counter = state.counter + action.payload; // payload => is set by default by redux/toolkit
-    },
-    toggleCounter(state) {
-      state.showCounter = !state.showCounter;
-    },
-  },
-});
-
-const initialAuthState = {
-  isAuthenticated: false,
-};
-
-const authSlice = createSlice({
-  name: "authentication",
-  initialState: initialAuthState,
-  reducers: {
-    login(state) {
-      state.isAuthenticated = true;
-    },
-    logout(state) {
-      state.isAuthenticated = false;
-    },
-  },
-});
+// Reducer functions were exported only
+import counterReducer from "./counter";
+import authReducer from "./auth";
 
 // connecting Redux
+// Receives an obj { reducer: function.reducer }
 const store = configureStore({
   // Adding multiple Slices
   reducer: {
-    counter: counterSlice.reducer, // state.counter.DATA
-    auth: authSlice.reducer, // state.auth.DATA
+    counter: counterReducer,
+    auth: authReducer,
   },
 });
-// Receives an obj { reducer: function.reducer }
-
-export const counterActions = counterSlice.actions; // Export all counterSlice.reducers
-export const authActions = authSlice.actions;
 
 export default store;
 

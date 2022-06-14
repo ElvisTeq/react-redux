@@ -1,6 +1,6 @@
 import classes from "./Counter.module.css";
 import { useSelector, useDispatch } from "react-redux"; // redux method to get 'store' data
-import { counterActions } from "../store/index"; // reducers functionality from "createSlice"
+import { counterActions } from "../store/counter"; // reducers functionality from "createSlice"
 
 const Counter = () => {
   const dispatch = useDispatch(); // Dispatching "store"

@@ -151,3 +151,13 @@ anyName.aFunctionFromcreateSlice => to access "createSlice.reducers"
 
 - "Auth.js"
   => Implemented/added new auth Slice
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 13 Splitting/Refactoring Redux Component
+
+=> Splitting/Creating every Slice into its own file
+
+- Splitted "index.js"
+  => "auth.js"
+  => "counter.js
