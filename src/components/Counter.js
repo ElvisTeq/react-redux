@@ -1,26 +1,27 @@
 import classes from "./Counter.module.css";
 import { useSelector, useDispatch } from "react-redux"; // redux method to get 'store' data
+import { counterActions } from "../store/index"; // reducers functionality from "createSlice"
 
 const Counter = () => {
   const dispatch = useDispatch(); // Dispatching "store"
   const counter = useSelector((state) => state.counter); // Get "store" data
   const show = useSelector((state) => state.showCounter); // true/false
 
+  //  Dynamically changing dispatch values
   const incrementHandler = () => {
-    dispatch({ type: "increment" });
+    dispatch(counterActions.increment());
   };
 
-  //  Dynamically changing dispatch values
   const increaseHandler = () => {
-    dispatch({ type: "increase", amount: 10 });
+    dispatch(counterActions.increase(10)); // Automatically by default will set { payload: 10 }
   };
 
   const decrementHandler = () => {
-    dispatch({ type: "decrement" });
+    dispatch(counterActions.decrement());
   };
 
   const toggleCounterHandler = () => {
-    dispatch({ type: "toggle" });
+    dispatch(counterActions.toggleCounter());
   };
 
   return (

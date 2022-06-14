@@ -1,7 +1,37 @@
-import { configureStore } from "@reduxjs/toolkit"; // replacing "createStore"
+import { configureStore, createSlice } from "@reduxjs/toolkit"; // replacing "createStore"
 
 const initialState = { counter: 0, showCounter: true };
 
+// createSlice => replacing "counterReducer()" "action.type" handling
+const counterSlice = createSlice({
+  name: "counter",
+  initialState, // initial data
+  // "action.type" functionality
+  reducers: {
+    increment(state) {
+      state.counter++;
+    },
+    decrement(state) {
+      state.counter--;
+    },
+    increase(state, action) {
+      state.counter = state.counter + action.payload; // payload => is set by default by redux/toolkit
+    },
+    toggleCounter(state) {
+      state.showCounter = !state.showCounter;
+    },
+  },
+});
+
+// connecting Redux
+const store = configureStore({ reducer: counterSlice.reducer }); // replaced "createStore" deprecated
+// Receives an obj { reducer: function.reducer }
+
+export const counterActions = counterSlice.actions; // Export all counterSlice.reducers
+
+export default store;
+
+/*
 const counterReducer = (state = initialState, action) => {
   if (action.type === "increment") {
     return {
@@ -36,16 +66,4 @@ const counterReducer = (state = initialState, action) => {
   return state;
 };
 
-const store = configureStore({ reducer: counterReducer }); // replacing "createStore" deprecated
-
-// const counterHandler = () => {
-//   const counterStatus = store.getState();
-//   console.log(counterStatus);
-// };
-
-// store.subscribe(counterHandler);
-
-// store.dispatch({ type: "increase" });
-// store.dispatch({ type: "decrease" });
-
-export default store;
+*/

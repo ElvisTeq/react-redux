@@ -88,3 +88,52 @@ All data inside "dispatch({data})" is accessible as "action.data" in the "redux"
 **\*** Important **\***
 All initialState data should be return when "action.type" is handled
 => Because it returns a new one
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 8 Working with Redux State Correctly
+
+**\*** IMPORTANT **\***
+
+- Never Change/Override the original "initialState"
+- Always return a new copy of the state with the changes {return {data}}
+
+- "index.js"
+  => Reason why we returned everything when handling "action type"
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 9 Using Redux Toolkit "createSlice" for better "action.type" handling
+
+=> Creating redux function
+
+- "index.js"
+  => using "createSlice" to replace all "action.type" (handlings)
+
+------------------------------------------------------- npm i @reduxjs/toolkit
+Replace with "npm i redux"
+
+------------------------------------------------------- import { createSlice } from "@reduxjs/toolkit"
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 10 Connecting "createSlice"
+
+- "index.js"
+  => "configureStore({})" to connect "createSlice()" to a variable
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 11 Migrating/Consuming Redux ToolKit State
+
+- "index.js"
+  => exporting "createSlice" functionality
+
+- "Counter.js"
+  => imported "createSlice.actions"
+
+------------------------------------------------------- export const anyName = function.actions
+exporting "createSlice.reducers"
+
+------------------------------------------------------- import { anyName } from "fileLocation"
+anyName.aFunctionFromcreateSlice => to access "createSlice.reducers"
